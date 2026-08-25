@@ -127,7 +127,7 @@ export default function Team() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
+              <div className="animate-slide-in-up">
                 <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6">
                   Sinds 2001
                 </div>
@@ -140,8 +140,8 @@ export default function Team() {
                 </p>
               </div>
 
-              <div className="relative">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-tr from-blue-100 to-white rounded-full opacity-40 blur-2xl -z-10"></div>
+              <div className="relative animate-scale-in">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-tr from-blue-100 to-white rounded-full opacity-40 blur-2xl -z-10 animate-pulse"></div>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                   <img
                     src="/team-samen-1200.webp"
