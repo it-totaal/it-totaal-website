@@ -658,16 +658,21 @@ function App() {
                     href="https://www.samendigitaalveilig.nl"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity"
+                    className="group inline-flex items-center gap-4 opacity-80 hover:opacity-100 transition-opacity"
                   >
                     <img
                       src="/logos/samen-digitaal-veilig.svg"
                       alt="Samen Digitaal Veilig"
-                      className="h-9 w-auto flex-shrink-0"
+                      className="h-11 w-auto flex-shrink-0"
                       loading="lazy"
                     />
-                    <span className="text-sm text-blue-100 group-hover:text-white transition-colors">
-                      Aangesloten als partner
+                    <span className="text-sm">
+                      <span className="block text-blue-100 group-hover:text-white transition-colors font-medium">
+                        Aangesloten als partner
+                      </span>
+                      <span className="block text-blue-200/80 max-w-md">
+                        Het landelijke initiatief dat MKB-ondernemers helpt zich te wapenen tegen cybercriminaliteit.
+                      </span>
                     </span>
                   </a>
                 </div>
