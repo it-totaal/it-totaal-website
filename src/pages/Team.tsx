@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, ArrowRight, Linkedin } from 'lucide-react';
+import { Mail, Phone, Linkedin } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { StructuredData } from '../components/StructuredData';
 import SiteHeader from '../components/SiteHeader';
@@ -217,13 +217,6 @@ export default function Team() {
                 >
                   <Mail size={18} />
                   info@it-totaal.nl
-                </a>
-                <a
-                  href="/#contact"
-                  className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-white bg-white/5 hover:bg-white/10 border border-slate-500 hover:border-brand-green transition-all hover-lift"
-                >
-                  Contactformulier
-                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
             </div>
