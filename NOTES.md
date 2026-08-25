@@ -44,6 +44,11 @@ Lessen en valkuilen van dit project. Lees dit aan het begin van elke sessie.
 - `index.css` zet `p { max-width: 65ch }` op **alle** alinea's. Een gecentreerde alinea heeft daardoor `mx-auto` nodig, anders staat de tekst wel in het midden van zijn eigen doos maar staat die doos links.
 - Menubalk en voettekst zitten in `SiteHeader` en `SiteFooter` met een `variant`: op de voorpagina wijzen de menu-items naar secties op dezelfde pagina, op een subpagina eerst terug naar de voorpagina. Bewust een gewone `<a>` en geen `<Link>`, want de browser springt dan zelf naar het anker.
 
+## Opruimen
+
+- Zoeken naar ongebruikte bestanden met een simpele grep op de bestandsnaam gaat **twee kanten op mis**. Vals alarm: `hero-kantoor-600.webp` staat nergens letterlijk, want die naam wordt opgebouwd (`'/' + naam + '-600.webp'`). Gemist: `logo.svg` lijkt gebruikt omdat die tekst ook in `duo-logo.svg` zit. Match daarom op een padgrens (`/` of een quote) en behandel de samengestelde families apart.
+- Een browsercontrole op "niet geladen afbeeldingen" meldt van alles wat gewoon `loading="lazy"` is en nog niet in beeld kwam. Scroll eerst de hele pagina door, en vergelijk daarna met de live site voordat je concludeert dat je iets gesloopt hebt. Er blijven er 13 over — de logoscroller houdt de originelen verborgen en toont kopieen. Dat is normaal.
+
 ## Beslissingen
 
 - **Geen contactformulier.** Op statische hosting moet dat naar een extern endpoint dat open op internet staat: spam, en bij slechte inrichting misbruik van je domein om mail te versturen. Een captcha lost dat op maar haalt een tracker binnen die je in je privacyverklaring moet verantwoorden. De mailadressen staan toch al leesbaar op de site, dus een formulier neemt geen blootstelling weg.
@@ -54,4 +59,4 @@ Lessen en valkuilen van dit project. Lees dit aan het begin van elke sessie.
 
 ## Supabase
 
-`src/lib/supabase.ts` bestaat maar wordt nergens geïmporteerd. Niet in gebruik.
+Verwijderd op 25-08-2026: het bestand, de migratie, de manualChunks-regel en de dependency. De klantenkaart leest uit `src/data/customer-locations.json`, niet uit een database. In `.env` staan lokaal nog `VITE_SUPABASE_URL` en `VITE_SUPABASE_ANON_KEY`; die worden nergens meer gelezen.
