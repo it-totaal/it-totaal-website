@@ -21,19 +21,19 @@ function App() {
   }, [location.pathname]);
 
   const logos = useMemo(() => [
-    { url: 'https://valicare.nl', src: import.meta.env.BASE_URL + 'logos/valicare.png', alt: 'Valicare', size: 'h-12' },
-    { url: 'https://bouwhof.nl', src: import.meta.env.BASE_URL + 'logos/bouwhof.svg', alt: 'Bouwhof', size: 'h-12' },
-    { url: 'https://dutchwyse.nl', src: import.meta.env.BASE_URL + 'logos/dutchwyse.svg', alt: 'Dutchwyse', size: 'h-12' },
-    { url: 'https://www.svde.nl', src: import.meta.env.BASE_URL + 'logos/svde.png', alt: 'SVDE', size: 'h-12' },
-    { url: 'https://demooij-zoetermeer.nl', src: import.meta.env.BASE_URL + 'logos/demooij.svg', alt: 'De Mooij', size: 'h-12' },
-    { url: 'https://www.mjdegroottransport.nl', src: import.meta.env.BASE_URL + 'logos/mjdegroot.svg', alt: 'MJ de Groot Transport', size: 'h-12' },
-    { url: 'https://jnhlogistics.com/nl/', src: import.meta.env.BASE_URL + 'logos/jnh.png', alt: 'JNH Logistics', size: 'h-8' },
-    { url: 'https://www.vanderwindttransport.nl/', src: import.meta.env.BASE_URL + 'logos/windt.png', alt: 'Van der Windt Transport', size: 'h-12' },
-    { url: 'https://vvwtransport.nl/', src: import.meta.env.BASE_URL + 'logos/vvw-transport.png', alt: 'VVW Transport', size: 'h-12' },
-    { url: 'https://mtcbv.nl/', src: import.meta.env.BASE_URL + 'logos/mtc.svg', alt: 'MTC BV', size: 'h-12' },
-    { url: 'https://www.korevaarlogistics.nl/', src: import.meta.env.BASE_URL + 'logos/korevaar-logo.png', alt: 'Korevaar Logistics', size: 'h-12' },
-    { url: 'https://www.easytrip.nl/', src: import.meta.env.BASE_URL + 'logos/easytrip.png', alt: 'EasyTrip', size: 'h-12' },
-    { url: 'https://www.kovtransport.nl/', src: import.meta.env.BASE_URL + 'logos/kov.png', alt: 'KOV Transport', size: 'h-12' },
+    { url: 'https://valicare.nl', src: '/logos/valicare.png', alt: 'Valicare', size: 'h-12' },
+    { url: 'https://bouwhof.nl', src: '/logos/bouwhof.svg', alt: 'Bouwhof', size: 'h-12' },
+    { url: 'https://dutchwyse.nl', src: '/logos/dutchwyse.svg', alt: 'Dutchwyse', size: 'h-12' },
+    { url: 'https://www.svde.nl', src: '/logos/svde.png', alt: 'SVDE', size: 'h-12' },
+    { url: 'https://demooij-zoetermeer.nl', src: '/logos/demooij.svg', alt: 'De Mooij', size: 'h-12' },
+    { url: 'https://www.mjdegroottransport.nl', src: '/logos/mjdegroot.svg', alt: 'MJ de Groot Transport', size: 'h-12' },
+    { url: 'https://jnhlogistics.com/nl/', src: '/logos/jnh.png', alt: 'JNH Logistics', size: 'h-8' },
+    { url: 'https://www.vanderwindttransport.nl/', src: '/logos/windt.png', alt: 'Van der Windt Transport', size: 'h-12' },
+    { url: 'https://vvwtransport.nl/', src: '/logos/vvw-transport.png', alt: 'VVW Transport', size: 'h-12' },
+    { url: 'https://mtcbv.nl/', src: '/logos/mtc.svg', alt: 'MTC BV', size: 'h-12' },
+    { url: 'https://www.korevaarlogistics.nl/', src: '/logos/korevaar-logo.png', alt: 'Korevaar Logistics', size: 'h-12' },
+    { url: 'https://www.easytrip.nl/', src: '/logos/easytrip.png', alt: 'EasyTrip', size: 'h-12' },
+    { url: 'https://www.kovtransport.nl/', src: '/logos/kov.png', alt: 'KOV Transport', size: 'h-12' },
   ], []);
 
   useEffect(() => {
@@ -150,7 +150,7 @@ function App() {
             <div className="flex-shrink-0">
               <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="cursor-pointer">
                 <img
-                  src={import.meta.env.BASE_URL + "logos/logo-ittotaal-green-path.svg"}
+                  src="/logos/logo-ittotaal-green-path.svg"
                   alt="IT Totaal"
                   style={{ aspectRatio: '1919/317' }}
                   className={`transition-all duration-300 ${
@@ -289,7 +289,7 @@ function App() {
                       willChange: 'transform',
                     }}
                   >
-                    <img className="w-full h-full object-cover" src={import.meta.env.BASE_URL + "hero-office.webp"} alt="IT professional aan het werk in moderne kantooromgeving" loading="eager" />
+                    <img className="w-full h-full object-cover" src="/hero-office.webp" alt="IT professional aan het werk in moderne kantooromgeving" loading="eager" />
                     <div
                       className="absolute inset-0 rounded-2xl pointer-events-none"
                       style={{
@@ -725,7 +725,7 @@ function App() {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-tr from-blue-200 to-white rounded-full opacity-30 blur-2xl -z-10"></div>
 
                     <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-                      <img src={import.meta.env.BASE_URL + "cybersecurity.jpg"} alt="Cybersecurity bescherming en beveiliging" className="w-full h-full object-cover" loading="lazy" />
+                      <img src="/cybersecurity.jpg" alt="Cybersecurity bescherming en beveiliging" className="w-full h-full object-cover" loading="lazy" />
                       <div className="absolute bottom-6 right-6 bg-white/95 backdrop-blur p-4 rounded-lg shadow-lg border border-red-100 flex items-center gap-3 animate-pulse">
                         <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-brand-green">
                           <ShieldCheck size={20} />
@@ -748,30 +748,30 @@ function App() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-8">
                 <div className="flex items-center justify-center p-2 h-16">
-                  <img src={import.meta.env.BASE_URL + "logos/duo-logo.svg"} alt="Duo Security" className="max-h-10 w-auto object-contain" />
+                  <img src="/logos/duo-logo.svg" alt="Duo Security" className="max-h-10 w-auto object-contain" />
                 </div>
                 <div className="flex items-center justify-center p-2 h-16">
-                  <img src={import.meta.env.BASE_URL + "logos/huntress-logo.png"} alt="Huntress" className="h-10 w-auto object-contain" />
+                  <img src="/logos/huntress-logo.png" alt="Huntress" className="h-10 w-auto object-contain" />
                 </div>
                 <div className="flex items-center justify-center p-2 h-16">
-                  <img src={import.meta.env.BASE_URL + "logos/ninjaOne-logo-blue.svg"} alt="NinjaOne" className="max-h-10 w-auto object-contain" />
+                  <img src="/logos/ninjaOne-logo-blue.svg" alt="NinjaOne" className="max-h-10 w-auto object-contain" />
                 </div>
                 <div className="flex items-center justify-center p-2 h-16">
-                  <img src={import.meta.env.BASE_URL + "logos/avepoint-logo.svg"} alt="AvePoint" className="max-h-10 w-auto object-contain" />
+                  <img src="/logos/avepoint-logo.svg" alt="AvePoint" className="max-h-10 w-auto object-contain" />
                 </div>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
                 <div className="flex items-center justify-center p-2 h-16">
-                  <img src={import.meta.env.BASE_URL + "logos/Microsoft_logo_(2012).svg.png"} alt="Microsoft" className="max-h-10 w-auto object-contain" />
+                  <img src="/logos/Microsoft_logo_(2012).svg.png" alt="Microsoft" className="max-h-10 w-auto object-contain" />
                 </div>
                 <div className="flex items-center justify-center p-2 h-16">
-                  <img src={import.meta.env.BASE_URL + "logos/vmware-logo-grey.svg"} alt="VMware" className="max-h-10 w-auto object-contain" />
+                  <img src="/logos/vmware-logo-grey.svg" alt="VMware" className="max-h-10 w-auto object-contain" />
                 </div>
                 <div className="flex items-center justify-center p-2 h-16">
-                  <img src={import.meta.env.BASE_URL + "logos/Veeam_logo.svg"} alt="Veeam" className="max-h-10 w-auto object-contain" />
+                  <img src="/logos/Veeam_logo.svg" alt="Veeam" className="max-h-10 w-auto object-contain" />
                 </div>
                 <div className="flex items-center justify-center p-2 h-16">
-                  <img src={import.meta.env.BASE_URL + "logos/HPE-logo-full-clr-pos-rgb_(3).png"} alt="HPE" className="max-h-10 w-auto object-contain" />
+                  <img src="/logos/HPE-logo-full-clr-pos-rgb_(3).png" alt="HPE" className="max-h-10 w-auto object-contain" />
                 </div>
               </div>
             </div>
@@ -812,7 +812,7 @@ function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <img
-                src={import.meta.env.BASE_URL + "logos/logo-ittotaal-white.svg"}
+                src="/logos/logo-ittotaal-white.svg"
                 alt="IT Totaal"
                 style={{ aspectRatio: '1919/317' }}
                 className="h-8 mb-5"
@@ -900,7 +900,7 @@ function App() {
               >
                 <div className="flex items-center gap-3 bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg transition-all border border-slate-600 hover:border-blue-400">
                   <img
-                    src={import.meta.env.BASE_URL + "ict-waarborg-logo.png"}
+                    src="/ict-waarborg-logo.png"
                     alt="ICT Waarborg lid"
                     className="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
                     loading="lazy"
