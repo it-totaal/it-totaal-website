@@ -1,6 +1,7 @@
 import { Download, Palette, FileText, Image as ImageIcon, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import seoRoutes from '../seo-routes.json';
 
 export default function Hulpmiddelen() {
   const brandColors = [
@@ -19,11 +20,7 @@ export default function Hulpmiddelen() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Perskit & Hulpmiddelen - IT Totaal"
-        description="Download IT Totaal logo's, bekijk merkrichtlijnen en kleurgebruik. Alles wat u nodig heeft om het IT Totaal merk correct te gebruiken."
-        canonical="https://it-totaal.nl/hulpmiddelen"
-      />
+      <SEO {...seoRoutes['/hulpmiddelen']} />
       <header className="bg-[#0c1959] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">

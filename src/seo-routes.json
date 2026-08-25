@@ -1,0 +1,33 @@
+{
+  "/": {
+    "title": "IT Totaal - Complete IT Dienstverlening | Cloud, Beheer en Support",
+    "description": "IT Totaal levert betrouwbare IT-beheer, clouddiensten en support voor transportbedrijven in Nederland. Specialist in de transportsector met 99.9% uptime.",
+    "canonical": "https://it-totaal.nl"
+  },
+  "/team": {
+    "title": "Ons team - IT Totaal",
+    "description": "Maak kennis met het team van IT Totaal. Korte lijnen, vaste gezichten en sinds 2001 uw partner voor complete IT-dienstverlening in Zoetermeer en omgeving.",
+    "canonical": "https://it-totaal.nl/team",
+    "ogImage": "https://it-totaal.nl/og-team.jpg"
+  },
+  "/hulpmiddelen": {
+    "title": "Perskit & Hulpmiddelen - IT Totaal",
+    "description": "Download IT Totaal logo's, bekijk merkrichtlijnen en kleurgebruik. Alles wat u nodig heeft om het IT Totaal merk correct te gebruiken.",
+    "canonical": "https://it-totaal.nl/hulpmiddelen"
+  },
+  "/privacy-verklaring": {
+    "title": "Privacy Verklaring - IT Totaal",
+    "description": "Hoe IT Totaal Diensten BV omgaat met uw persoonsgegevens en privacy. Transparante informatie over gegevensverzameling en -gebruik.",
+    "canonical": "https://it-totaal.nl/privacy-verklaring"
+  },
+  "/algemene-voorwaarden": {
+    "title": "Algemene Voorwaarden - IT Totaal",
+    "description": "De algemene voorwaarden van IT Totaal Diensten BV voor zakelijke IT-dienstverlening. Download het volledige PDF document.",
+    "canonical": "https://it-totaal.nl/algemene-voorwaarden"
+  },
+  "/verwerkersovereenkomst": {
+    "title": "Verwerkersovereenkomst - IT Totaal",
+    "description": "De verwerkersovereenkomst voor gegevensverwerking door IT Totaal Diensten BV. Download het volledige PDF document.",
+    "canonical": "https://it-totaal.nl/verwerkersovereenkomst"
+  }
+}

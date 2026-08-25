@@ -1,15 +1,12 @@
 import { Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import seoRoutes from '../seo-routes.json';
 
 export default function PrivacyStatement() {
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Privacy Verklaring - IT Totaal"
-        description="Hoe IT Totaal Diensten BV omgaat met uw persoonsgegevens en privacy. Transparante informatie over gegevensverzameling en -gebruik."
-        canonical="https://it-totaal.nl/privacy-verklaring"
-      />
+      <SEO {...seoRoutes['/privacy-verklaring']} />
       <header className="bg-[#0c1959] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">

@@ -1,15 +1,12 @@
 import { FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import seoRoutes from '../seo-routes.json';
 
 export default function AlgemeneVoorwaarden() {
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Algemene Voorwaarden - IT Totaal"
-        description="De algemene voorwaarden van IT Totaal Diensten BV voor zakelijke IT-dienstverlening. Download het volledige PDF document."
-        canonical="https://it-totaal.nl/algemene-voorwaarden"
-      />
+      <SEO {...seoRoutes['/algemene-voorwaarden']} />
       <header className="bg-[#0c1959] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">

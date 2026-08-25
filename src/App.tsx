@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Server, Cloud, Headphones, CheckCircle, Phone, Mail, Shield, ShieldCheck, Lock, Award, ArrowRight, Package, Settings, Rocket } from 'lucide-react';
 import { StructuredData, organizationSchema, localBusinessSchema, serviceSchema } from './components/StructuredData';
 import { SEO } from './components/SEO';
+import seoRoutes from './seo-routes.json';
 import StaticMap from './components/StaticMap';
 import InfiniteLogoScroll from './components/InfiniteLogoScroll';
 import SiteHeader from './components/SiteHeader';
@@ -112,11 +113,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="IT Totaal - Complete IT Dienstverlening | Cloud, Beheer en Support"
-        description="IT Totaal levert betrouwbare IT-beheer, clouddiensten en support voor transportbedrijven in Nederland. Specialist in de transportsector met 99.9% uptime."
-        canonical="https://it-totaal.nl"
-      />
+      <SEO {...seoRoutes['/']} />
       <StructuredData data={organizationSchema} />
       <StructuredData data={localBusinessSchema} />
       <StructuredData data={serviceSchema} />

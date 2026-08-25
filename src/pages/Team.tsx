@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Linkedin, UserPlus, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import seoRoutes from '../seo-routes.json';
 import { StructuredData } from '../components/StructuredData';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
@@ -91,12 +92,7 @@ const VACATURES: Vacature[] = [
 export default function Team() {
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Ons team - IT Totaal"
-        description="Maak kennis met het team van IT Totaal. Korte lijnen, vaste gezichten en sinds 2001 uw partner voor complete IT-dienstverlening in Zoetermeer en omgeving."
-        canonical="https://it-totaal.nl/team"
-        ogImage="https://it-totaal.nl/og-team.jpg"
-      />
+      <SEO {...seoRoutes['/team']} />
 
       <StructuredData data={teamSchema} />
 
