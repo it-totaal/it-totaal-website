@@ -84,7 +84,7 @@ export default function Team() {
       <SiteHeader variant="sub" />
 
       <main role="main" className="pt-16">
-        <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-white">
+        <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-white">
           <svg
             className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] opacity-30 z-0 pointer-events-none"
             viewBox="0 0 200 200"
@@ -105,38 +105,40 @@ export default function Team() {
           </svg>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3 mb-6 text-sm">
+            <div className="flex items-center gap-3 mb-8 text-sm">
               <Link to="/" className="text-slate-500 hover:text-blue-600 transition-colors">Home</Link>
               <span className="text-slate-300">/</span>
               <span className="text-slate-700 font-medium">Team</span>
             </div>
 
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-                Sinds 2001
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+                  Sinds 2001
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                  De mensen achter <span className="text-blue-600">IT Totaal.</span>
+                </h1>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Geen callcenter en geen wisselende gezichten. U krijgt een vast team dat uw omgeving kent,
+                  uw naam weet en de telefoon zelf opneemt. Dat is precies waarom IT bij ons gewoon werkt.
+                </p>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                De mensen achter <span className="text-blue-600">IT Totaal.</span>
-              </h1>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Geen callcenter en geen wisselende gezichten. U krijgt een vast team dat uw omgeving kent,
-                uw naam weet en de telefoon zelf opneemt. Dat is precies waarom IT bij ons gewoon werkt.
-              </p>
-            </div>
-          </div>
-        </section>
 
-        <section className="pb-16 lg:pb-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <img
-                src="/team-samen-1200.webp"
-                srcSet="/team-samen-1200.webp 1200w, /team-samen-1920.webp 1920w"
-                sizes="(min-width: 1280px) 1216px, 100vw"
-                alt="Het team van IT Totaal op kantoor in Zoetermeer"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <div className="relative">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-tr from-blue-100 to-white rounded-full opacity-40 blur-2xl -z-10"></div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img
+                    src="/team-samen-1200.webp"
+                    srcSet="/team-samen-1200.webp 1200w, /team-samen-1920.webp 1920w"
+                    sizes="(min-width: 1024px) 576px, 92vw"
+                    alt="Het team van IT Totaal op kantoor in Zoetermeer"
+                    className="w-full h-auto"
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
