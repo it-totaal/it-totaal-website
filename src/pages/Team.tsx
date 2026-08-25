@@ -97,10 +97,10 @@ export default function Team() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               <img
-                src="/team-groep-1200.webp"
-                srcSet="/team-groep-1200.webp 1200w, /team-groep-1920.webp 1920w"
+                src="/team-samen-1200.webp"
+                srcSet="/team-samen-1200.webp 1200w, /team-samen-1920.webp 1920w"
                 sizes="(min-width: 1280px) 1216px, 100vw"
-                alt="Het team van IT Totaal in het kantoor in Zoetermeer"
+                alt="Het team van IT Totaal op kantoor in Zoetermeer"
                 className="w-full h-auto"
                 loading="lazy"
               />
