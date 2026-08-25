@@ -653,26 +653,22 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <div className="pt-8 border-t border-white/20">
+                <div className="pt-6 border-t border-white/15">
                   <a
                     href="https://www.samendigitaalveilig.nl"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-col sm:flex-row items-center gap-6 bg-white/10 hover:bg-white/15 border border-white/20 hover:border-brand-green rounded-2xl p-6 transition-all"
+                    className="group inline-flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity"
                   >
                     <img
                       src="/logos/samen-digitaal-veilig.svg"
                       alt="Samen Digitaal Veilig"
-                      className="h-16 w-auto flex-shrink-0"
+                      className="h-9 w-auto flex-shrink-0"
                       loading="lazy"
                     />
-                    <div className="text-center sm:text-left">
-                      <p className="text-xs uppercase font-semibold tracking-widest text-blue-100 mb-1">Aangesloten als partner</p>
-                      <p className="text-lg font-bold text-white">Samen Digitaal Veilig</p>
-                      <p className="text-blue-100 mt-1">
-                        Het landelijke initiatief dat MKB-ondernemers helpt zich te wapenen tegen cybercriminaliteit.
-                      </p>
-                    </div>
+                    <span className="text-sm text-blue-100 group-hover:text-white transition-colors">
+                      Aangesloten als partner
+                    </span>
                   </a>
                 </div>
               </div>
