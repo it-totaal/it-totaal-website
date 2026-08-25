@@ -16,6 +16,17 @@ function App() {
   const rafRef = useRef<number | null>(null);
   const location = useLocation();
 
+  // De willekeurige keuze valt al in de <head> van index.html, zodat de preload
+  // klopt. Hier alleen oppakken; de fallback vangt het geval af dat het script
+  // niet gedraaid heeft.
+  const heroPhoto = useMemo(
+    () => window.__heroPhoto ?? {
+      src: '/hero-monitoring.webp',
+      alt: 'Medewerker van IT Totaal bewaakt systemen op een monitoringdashboard',
+    },
+    []
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -35,13 +46,6 @@ function App() {
     { url: 'https://www.easytrip.nl/', src: '/logos/easytrip.png', alt: 'EasyTrip', size: 'h-12' },
     { url: 'https://www.kovtransport.nl/', src: '/logos/kov.png', alt: 'KOV Transport', size: 'h-12' },
   ], []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % logos.length);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [logos.length]);
 
   useEffect(() => {
     let ticking = false;
@@ -289,7 +293,7 @@ function App() {
                       willChange: 'transform',
                     }}
                   >
-                    <img className="w-full h-full object-cover" src="/hero-office.webp" alt="IT professional aan het werk in moderne kantooromgeving" loading="eager" />
+                    <img className="w-full h-full object-cover" src={heroPhoto.src} alt={heroPhoto.alt} loading="eager" />
                     <div
                       className="absolute inset-0 rounded-2xl pointer-events-none"
                       style={{
