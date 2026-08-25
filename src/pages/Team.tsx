@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Linkedin } from 'lucide-react';
+import { Mail, Phone, Linkedin, UserPlus, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { StructuredData } from '../components/StructuredData';
 import SiteHeader from '../components/SiteHeader';
@@ -68,6 +68,25 @@ const teamSchema = {
     worksFor: { '@id': 'https://it-totaal.nl/#organisatie' },
   })),
 };
+
+interface Vacature {
+  functie: string;
+  omschrijving: string;
+}
+
+// Leeg laten (of de sectie weghalen) zodra er niets meer openstaat.
+const VACATURES: Vacature[] = [
+  {
+    functie: 'Senior systeembeheerder',
+    omschrijving:
+      'Je draait zelfstandig complexe trajecten bij onze klanten: migraties, inrichting van servers en netwerken, en het bewaken van de omgevingen die we beheren. Je bent het aanspreekpunt als het echt ingewikkeld wordt.',
+  },
+  {
+    functie: 'Systeembeheerder',
+    omschrijving:
+      'Je houdt de omgevingen van onze klanten draaiend: werkplekken, Microsoft 365, back-ups en de dagelijkse meldingen. Je leert het vak bij een klein team waar je alles voorbij ziet komen.',
+  },
+];
 
 export default function Team() {
   return (
@@ -197,6 +216,40 @@ export default function Team() {
             </div>
           </div>
         </section>
+
+        {VACATURES.length > 0 && (
+          <section className="pb-20 lg:pb-28">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-14">
+                <p className="text-blue-600 font-semibold uppercase tracking-wider text-sm mb-3 mx-auto">Werken bij IT Totaal</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">We zoeken versterking</h2>
+                <div className="w-16 h-1 bg-brand-green rounded-full mx-auto mt-5"></div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+                {VACATURES.map((vacature) => (
+                  <article
+                    key={vacature.functie}
+                    className="group flex flex-col bg-blue-50/40 rounded-2xl border-2 border-dashed border-blue-200 p-8 transition-all duration-300 hover:border-blue-400 hover:-translate-y-1"
+                  >
+                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-blue-600 mb-6 shadow-sm transition-all group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110">
+                      <UserPlus size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">{vacature.functie}</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6 flex-grow">{vacature.omschrijving}</p>
+                    <a
+                      href={`mailto:directie@it-totaal.nl?subject=${encodeURIComponent('Sollicitatie ' + vacature.functie)}`}
+                      className="inline-flex items-center gap-2 self-start px-6 py-3 rounded-full font-medium text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md hover-lift"
+                    >
+                      Solliciteer
+                      <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="pb-20 lg:pb-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
