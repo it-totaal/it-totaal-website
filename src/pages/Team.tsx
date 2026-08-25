@@ -24,7 +24,7 @@ const TEAM: Teamlid[] = [
     omschrijving:
       'Eindverantwoordelijk voor IT Totaal en aanspreekpunt voor onze klanten. Denkt mee over de koers van uw IT-omgeving.',
     email: 'directie@it-totaal.nl',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/pluisman/',
     bestand: 'team-patrick',
     alt: 'Patrick Luisman, eigenaar en directeur van IT Totaal',
   },
