@@ -172,7 +172,7 @@ function App() {
                 <Phone className="text-brand-green transition-transform group-hover:rotate-12" size={16} />
                 <span className="font-medium">079 323 8540</span>
               </a>
-              <a href="https://it-totaal.rmmservice.eu/connect/#/4990654399" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-full text-slate-900 bg-brand-green hover:bg-[#3dd493] transition-all shadow-md hover:shadow-lg hover-scale">
+              <a href="https://it-totaal.rmmservice.eu/connect/#/" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-full text-slate-900 bg-brand-green hover:bg-[#3dd493] transition-all shadow-md hover:shadow-lg hover-scale">
                 Support
               </a>
             </div>
@@ -194,7 +194,7 @@ function App() {
                   <a href="#diensten" className="transition-colors text-slate-700 hover:text-blue-600">Diensten</a>
                   <a href="#security" className="transition-colors text-slate-700 hover:text-blue-600">Security</a>
                   <a href="#contact" className="transition-colors text-slate-700 hover:text-blue-600">Contact</a>
-                  <a href="https://it-totaal.rmmservice.eu/connect/#/4990654399" target="_blank" rel="noopener noreferrer" className="bg-brand-green text-slate-900 px-6 py-2 rounded-lg hover:bg-[#3dd493] transition-colors text-center flex items-center justify-center gap-2">
+                  <a href="https://it-totaal.rmmservice.eu/connect/#/" target="_blank" rel="noopener noreferrer" className="bg-brand-green text-slate-900 px-6 py-2 rounded-lg hover:bg-[#3dd493] transition-colors text-center flex items-center justify-center gap-2">
                     <Headphones size={20} />
                     Support
                   </a>
@@ -855,7 +855,7 @@ function App() {
                 <li><a href="#waarom" className="text-slate-300 hover:text-blue-400 transition-colors">Waarom IT Totaal</a></li>
                 <li><a href="#security" className="text-slate-300 hover:text-blue-400 transition-colors">Security</a></li>
                 <li><a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a></li>
-                <li><a href="https://it-totaal.rmmservice.eu/connect/#/4990654399" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-blue-400 transition-colors">Support Portal</a></li>
+                <li><a href="https://it-totaal.rmmservice.eu/connect/#/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-blue-400 transition-colors">Support Portal</a></li>
               </ul>
             </div>
             <div>
