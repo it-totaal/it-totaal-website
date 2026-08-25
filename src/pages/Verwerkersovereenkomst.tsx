@@ -8,7 +8,7 @@ export default function Verwerkersovereenkomst() {
       <SEO
         title="Verwerkersovereenkomst - IT Totaal"
         description="De verwerkersovereenkomst voor gegevensverwerking door IT Totaal Diensten BV. Download het volledige PDF document."
-        canonical="https://www.it-totaal.nl/verwerkersovereenkomst"
+        canonical="https://it-totaal.nl/verwerkersovereenkomst"
       />
       <header className="bg-[#0c1959] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

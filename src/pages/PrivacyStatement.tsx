@@ -8,7 +8,7 @@ export default function PrivacyStatement() {
       <SEO
         title="Privacy Verklaring - IT Totaal"
         description="Hoe IT Totaal Diensten BV omgaat met uw persoonsgegevens en privacy. Transparante informatie over gegevensverzameling en -gebruik."
-        canonical="https://www.it-totaal.nl/privacy-verklaring"
+        canonical="https://it-totaal.nl/privacy-verklaring"
       />
       <header className="bg-[#0c1959] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

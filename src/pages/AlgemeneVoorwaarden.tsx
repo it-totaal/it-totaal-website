@@ -8,7 +8,7 @@ export default function AlgemeneVoorwaarden() {
       <SEO
         title="Algemene Voorwaarden - IT Totaal"
         description="De algemene voorwaarden van IT Totaal Diensten BV voor zakelijke IT-dienstverlening. Download het volledige PDF document."
-        canonical="https://www.it-totaal.nl/algemene-voorwaarden"
+        canonical="https://it-totaal.nl/algemene-voorwaarden"
       />
       <header className="bg-[#0c1959] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -11,13 +11,13 @@ export const updateSEO = (data: SEOData) => {
   if (data.title) {
     document.title = data.title;
     updateMetaTag('og:title', data.title);
-    updateMetaTag('twitter:title', data.title);
+    updateMetaTag('twitter:title', data.title, 'name');
   }
 
   if (data.description) {
     updateMetaTag('description', data.description, 'name');
     updateMetaTag('og:description', data.description);
-    updateMetaTag('twitter:description', data.description);
+    updateMetaTag('twitter:description', data.description, 'name');
   }
 
   if (data.canonical) {
@@ -31,7 +31,7 @@ export const updateSEO = (data: SEOData) => {
 
   if (data.ogImage) {
     updateMetaTag('og:image', data.ogImage);
-    updateMetaTag('twitter:image', data.ogImage);
+    updateMetaTag('twitter:image', data.ogImage, 'name');
   }
 
   if (data.ogType) {

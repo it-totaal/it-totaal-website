@@ -115,7 +115,7 @@ function App() {
       <SEO
         title="IT Totaal - Complete IT Dienstverlening | Cloud, Beheer en Support"
         description="IT Totaal levert betrouwbare IT-beheer, clouddiensten en support voor transportbedrijven in Nederland. Specialist in de transportsector met 99.9% uptime."
-        canonical="https://www.it-totaal.nl"
+        canonical="https://it-totaal.nl"
       />
       <StructuredData data={organizationSchema} />
       <StructuredData data={localBusinessSchema} />

@@ -22,7 +22,7 @@ export default function Hulpmiddelen() {
       <SEO
         title="Perskit & Hulpmiddelen - IT Totaal"
         description="Download IT Totaal logo's, bekijk merkrichtlijnen en kleurgebruik. Alles wat u nodig heeft om het IT Totaal merk correct te gebruiken."
-        canonical="https://www.it-totaal.nl/hulpmiddelen"
+        canonical="https://it-totaal.nl/hulpmiddelen"
       />
       <header className="bg-[#0c1959] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -243,7 +243,7 @@ export default function Hulpmiddelen() {
                     </div>
                     <div>
                       <dt className="text-sm text-slate-500 mb-1">Website</dt>
-                      <dd className="text-slate-900">www.it-totaal.nl</dd>
+                      <dd className="text-slate-900">it-totaal.nl</dd>
                     </div>
                   </dl>
                 </div>

@@ -55,17 +55,17 @@ const TEAM: Teamlid[] = [
 const teamSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://www.it-totaal.nl/#organisatie',
+  '@id': 'https://it-totaal.nl/#organisatie',
   name: 'IT Totaal Diensten BV',
-  url: 'https://www.it-totaal.nl',
+  url: 'https://it-totaal.nl',
   employee: TEAM.map((lid) => ({
     '@type': 'Person',
     name: lid.naam,
     jobTitle: lid.functie,
     email: lid.email,
-    image: `https://www.it-totaal.nl/${lid.bestand}-960.webp`,
+    image: `https://it-totaal.nl/${lid.bestand}-960.webp`,
     ...(lid.linkedin ? { sameAs: [lid.linkedin] } : {}),
-    worksFor: { '@id': 'https://www.it-totaal.nl/#organisatie' },
+    worksFor: { '@id': 'https://it-totaal.nl/#organisatie' },
   })),
 };
 
@@ -75,7 +75,8 @@ export default function Team() {
       <SEO
         title="Ons team - IT Totaal"
         description="Maak kennis met het team van IT Totaal. Korte lijnen, vaste gezichten en sinds 2001 uw partner voor complete IT-dienstverlening in Zoetermeer en omgeving."
-        canonical="https://www.it-totaal.nl/team"
+        canonical="https://it-totaal.nl/team"
+        ogImage="https://it-totaal.nl/og-team.jpg"
       />
 
       <StructuredData data={teamSchema} />

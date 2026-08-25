@@ -23,8 +23,8 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "IT Totaal Diensten BV",
-  "url": "https://www.it-totaal.nl",
-  "logo": "https://www.it-totaal.nl/logos/logo-ittotaal.svg",
+  "url": "https://it-totaal.nl",
+  "logo": "https://it-totaal.nl/logos/logo-ittotaal.svg",
   "description": "Complete IT-dienstverlening voor MKB bedrijven. Van cloud oplossingen en IT-beheer tot cybersecurity en 24/7 support.",
   "address": {
     "@type": "PostalAddress",
@@ -59,7 +59,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "IT Totaal",
-  "image": "https://www.it-totaal.nl/hero-image.png",
+  "image": "https://it-totaal.nl/hero-image.png",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Rokkeveenseweg 32",
@@ -72,7 +72,7 @@ export const localBusinessSchema = {
     "latitude": 52.0576,
     "longitude": 4.4935
   },
-  "url": "https://www.it-totaal.nl",
+  "url": "https://it-totaal.nl",
   "telephone": "+31793238540",
   "email": "info@it-totaal.nl",
   "priceRange": "€€",
@@ -146,7 +146,7 @@ export const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://www.it-totaal.nl"
+      "item": "https://it-totaal.nl"
     }
   ]
 };
