@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, ArrowRight } from 'lucide-react';
+import { Mail, Phone, ArrowRight, Linkedin } from 'lucide-react';
 import { SEO } from '../components/SEO';
-import { StructuredData, teamSchema } from '../components/StructuredData';
+import { StructuredData } from '../components/StructuredData';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 
@@ -11,6 +11,8 @@ interface Teamlid {
   omschrijving: string;
   /** Rolgebaseerd adres: blijft kloppen als iemand de rol overneemt. */
   email: string;
+  /** Volledige profiel-URL. Leeg laten = geen LinkedIn-knop op die kaart. */
+  linkedin?: string;
   bestand: string;
   alt: string;
 }
@@ -22,6 +24,7 @@ const TEAM: Teamlid[] = [
     omschrijving:
       'Eindverantwoordelijk voor IT Totaal en aanspreekpunt voor onze klanten. Denkt mee over de koers van uw IT-omgeving.',
     email: 'directie@it-totaal.nl',
+    linkedin: '',
     bestand: 'team-patrick',
     alt: 'Patrick Luisman, eigenaar en directeur van IT Totaal',
   },
@@ -31,6 +34,7 @@ const TEAM: Teamlid[] = [
     omschrijving:
       'Verzorgt de administratie en zorgt dat alles achter de schermen soepel loopt. Vaak de eerste stem die u hoort.',
     email: 'administratie@it-totaal.nl',
+    linkedin: '',
     bestand: 'team-kimberly',
     alt: 'Kimberly de la Parra, Executive Assistant bij IT Totaal',
   },
@@ -40,10 +44,30 @@ const TEAM: Teamlid[] = [
     omschrijving:
       'Beheert de systemen, servers en netwerken van onze klanten. Lost storingen op voordat u ze merkt.',
     email: 'helpdesk@it-totaal.nl',
+    linkedin: '',
     bestand: 'team-leon',
     alt: 'Leon Hoogduin, systeembeheerder bij IT Totaal',
   },
 ];
+
+// Afgeleid uit TEAM, zodat naam, functie, adres en LinkedIn maar op één plek
+// staan. Hiermee herkent een zoekmachine ze als personen bij het bedrijf.
+const teamSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://www.it-totaal.nl/#organisatie',
+  name: 'IT Totaal Diensten BV',
+  url: 'https://www.it-totaal.nl',
+  employee: TEAM.map((lid) => ({
+    '@type': 'Person',
+    name: lid.naam,
+    jobTitle: lid.functie,
+    email: lid.email,
+    image: `https://www.it-totaal.nl/${lid.bestand}-960.webp`,
+    ...(lid.linkedin ? { sameAs: [lid.linkedin] } : {}),
+    worksFor: { '@id': 'https://www.it-totaal.nl/#organisatie' },
+  })),
+};
 
 export default function Team() {
   return (
@@ -144,13 +168,26 @@ export default function Team() {
                     <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">{lid.naam}</h3>
                     <p className="text-blue-600 font-medium mt-1 mb-3">{lid.functie}</p>
                     <p className="text-slate-600 leading-relaxed">{lid.omschrijving}</p>
-                    <a
-                      href={`mailto:${lid.email}`}
-                      className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors break-all"
-                    >
-                      <Mail size={16} className="text-blue-600 flex-shrink-0" />
-                      {lid.email}
-                    </a>
+                    <div className="mt-5 pt-5 border-t border-slate-100 flex items-center justify-between gap-3">
+                      <a
+                        href={`mailto:${lid.email}`}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors break-all"
+                      >
+                        <Mail size={16} className="text-blue-600 flex-shrink-0" />
+                        {lid.email}
+                      </a>
+                      {lid.linkedin && (
+                        <a
+                          href={lid.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`LinkedIn-profiel van ${lid.naam}`}
+                          className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center transition-all hover:bg-blue-600 hover:text-white hover:scale-110"
+                        >
+                          <Linkedin size={18} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </article>
               ))}

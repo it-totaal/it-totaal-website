@@ -151,38 +151,3 @@ export const breadcrumbSchema = {
   ]
 };
 
-// Koppelt de teamleden aan het bedrijf, zodat een zoekmachine ze als personen
-// herkent en niet als losse tekst. Rolgebaseerde adressen, geen persoonlijke.
-export const teamSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.it-totaal.nl/#organisatie",
-  "name": "IT Totaal Diensten BV",
-  "url": "https://www.it-totaal.nl",
-  "employee": [
-    {
-      "@type": "Person",
-      "name": "Patrick Luisman",
-      "jobTitle": "Eigenaar & Directeur",
-      "email": "directie@it-totaal.nl",
-      "image": "https://www.it-totaal.nl/team-patrick-960.webp",
-      "worksFor": { "@id": "https://www.it-totaal.nl/#organisatie" }
-    },
-    {
-      "@type": "Person",
-      "name": "Kimberly de la Parra",
-      "jobTitle": "Executive Assistant",
-      "email": "administratie@it-totaal.nl",
-      "image": "https://www.it-totaal.nl/team-kimberly-960.webp",
-      "worksFor": { "@id": "https://www.it-totaal.nl/#organisatie" }
-    },
-    {
-      "@type": "Person",
-      "name": "Leon Hoogduin",
-      "jobTitle": "Systeembeheerder",
-      "email": "helpdesk@it-totaal.nl",
-      "image": "https://www.it-totaal.nl/team-leon-960.webp",
-      "worksFor": { "@id": "https://www.it-totaal.nl/#organisatie" }
-    }
-  ]
-};
