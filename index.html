@@ -16,24 +16,47 @@
          de júiste foto met voorrang laadt. Zou de keuze pas in React vallen, dan
          haalt de browser eerst de verkeerde foto binnen: trager en zichtbaar
          geflikker in de hero.
-         Nieuwe foto toevoegen? Alleen deze lijst aanvullen — verder niets. */
+
+         Elke foto bestaat in 600 en 1200 px. De browser kiest via srcset welke
+         hij nodig heeft: 600 op een gewoon scherm, 1200 op retina. Dat scheelt
+         niet alleen data — een foto die de browser zelf sterk moet verkleinen
+         wordt zichtbaar zachter, en daar is dit precies de oplossing voor.
+
+         Nieuwe foto toevoegen? Zet <naam>-600.webp en <naam>-1200.webp in deze
+         map en vul de lijst aan. Verder niets. */
       (function () {
         var fotos = [
-          { src: '/hero-monitoring.webp',     alt: 'Medewerker van IT Totaal bewaakt systemen op een monitoringdashboard' },
-          { src: '/hero-rackontwerp.webp',    alt: 'Medewerker van IT Totaal werkt aan een serverrack-ontwerp' },
-          { src: '/hero-orderverwerking.webp', alt: 'Medewerker van IT Totaal verwerkt orders op kantoor' },
-          { src: '/hero-overleg.webp',        alt: 'Collega\'s van IT Totaal overleggen op de werkvloer' },
-          { src: '/hero-rackstudio.webp',     alt: 'IT-specialist van IT Totaal configureert een serverrack' },
-          { src: '/hero-kantoor.webp',        alt: 'Team van IT Totaal in gesprek op kantoor' },
-          { src: '/hero-teamoverleg.webp',    alt: 'Teamoverleg bij IT Totaal aan de vergadertafel' }
+          { naam: 'hero-monitoring',      alt: 'Medewerker van IT Totaal bewaakt systemen op een monitoringdashboard' },
+          { naam: 'hero-rackontwerp',     alt: 'Medewerker van IT Totaal werkt aan een serverrack-ontwerp' },
+          { naam: 'hero-orderverwerking', alt: 'Medewerker van IT Totaal verwerkt orders op kantoor' },
+          { naam: 'hero-overleg',         alt: 'Collega\'s van IT Totaal overleggen op de werkvloer' },
+          { naam: 'hero-rackstudio',      alt: 'IT-specialist van IT Totaal configureert een serverrack' },
+          { naam: 'hero-kantoor',         alt: 'Team van IT Totaal in gesprek op kantoor' },
+          { naam: 'hero-teamoverleg',     alt: 'Teamoverleg bij IT Totaal aan de vergadertafel' },
+          { naam: 'hero-support',         alt: 'Supportmedewerker van IT Totaal helpt een klant via de headset' },
+          { naam: 'hero-gesprek',         alt: 'Collega\'s van IT Totaal in gesprek bij de vergaderruimte' },
+          { naam: 'hero-kantoorpand',     alt: 'Medewerker van IT Totaal bij de glazen wand van het kantoor' },
+          { naam: 'hero-collega',         alt: 'Medewerker van IT Totaal op kantoor' },
+          { naam: 'hero-werkplek',        alt: 'Medewerker van IT Totaal op de werkplek' },
+          { naam: 'hero-lounge',          alt: 'Medewerker van IT Totaal in de loungehoek van het kantoor' }
         ];
         var foto = fotos[Math.floor(Math.random() * fotos.length)];
-        window.__heroPhoto = foto;
+        var srcset = '/' + foto.naam + '-600.webp 600w, /' + foto.naam + '-1200.webp 1200w';
+        var sizes = '(min-width: 1024px) 576px, 92vw';
+
+        window.__heroPhoto = {
+          src: '/' + foto.naam + '-1200.webp',
+          srcset: srcset,
+          sizes: sizes,
+          alt: foto.alt
+        };
 
         var link = document.createElement('link');
         link.rel = 'preload';
         link.as = 'image';
-        link.href = foto.src;
+        link.href = window.__heroPhoto.src;
+        link.imageSrcset = srcset;
+        link.imageSizes = sizes;
         link.setAttribute('fetchpriority', 'high');
         document.head.appendChild(link);
       })();
@@ -74,7 +97,7 @@
     <meta name="theme-color" content="#0c1959" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <script type="module" crossorigin src="/assets/index-C3Q0KOIJ.js"></script>
+    <script type="module" crossorigin src="/assets/index-DmUieOeK.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/supabase-vendor-D7HrI6pR.js">
     <link rel="modulepreload" crossorigin href="/assets/react-vendor-BvDay7C4.js">
     <link rel="stylesheet" crossorigin href="/assets/index-Dg1GQdAJ.css">
