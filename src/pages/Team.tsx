@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { StructuredData, teamSchema } from '../components/StructuredData';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 
@@ -8,6 +9,8 @@ interface Teamlid {
   naam: string;
   functie: string;
   omschrijving: string;
+  /** Rolgebaseerd adres: blijft kloppen als iemand de rol overneemt. */
+  email: string;
   bestand: string;
   alt: string;
 }
@@ -18,6 +21,7 @@ const TEAM: Teamlid[] = [
     functie: 'Eigenaar & Directeur',
     omschrijving:
       'Eindverantwoordelijk voor IT Totaal en aanspreekpunt voor onze klanten. Denkt mee over de koers van uw IT-omgeving.',
+    email: 'directie@it-totaal.nl',
     bestand: 'team-patrick',
     alt: 'Patrick Luisman, eigenaar en directeur van IT Totaal',
   },
@@ -26,6 +30,7 @@ const TEAM: Teamlid[] = [
     functie: 'Executive Assistant',
     omschrijving:
       'Verzorgt de administratie en zorgt dat alles achter de schermen soepel loopt. Vaak de eerste stem die u hoort.',
+    email: 'administratie@it-totaal.nl',
     bestand: 'team-kimberly',
     alt: 'Kimberly de la Parra, Executive Assistant bij IT Totaal',
   },
@@ -34,6 +39,7 @@ const TEAM: Teamlid[] = [
     functie: 'Systeembeheerder',
     omschrijving:
       'Beheert de systemen, servers en netwerken van onze klanten. Lost storingen op voordat u ze merkt.',
+    email: 'helpdesk@it-totaal.nl',
     bestand: 'team-leon',
     alt: 'Leon Hoogduin, systeembeheerder bij IT Totaal',
   },
@@ -47,6 +53,8 @@ export default function Team() {
         description="Maak kennis met het team van IT Totaal. Korte lijnen, vaste gezichten en sinds 2001 uw partner voor complete IT-dienstverlening in Zoetermeer en omgeving."
         canonical="https://www.it-totaal.nl/team"
       />
+
+      <StructuredData data={teamSchema} />
 
       <SiteHeader variant="sub" />
 
@@ -136,6 +144,13 @@ export default function Team() {
                     <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">{lid.naam}</h3>
                     <p className="text-blue-600 font-medium mt-1 mb-3">{lid.functie}</p>
                     <p className="text-slate-600 leading-relaxed">{lid.omschrijving}</p>
+                    <a
+                      href={`mailto:${lid.email}`}
+                      className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors break-all"
+                    >
+                      <Mail size={16} className="text-blue-600 flex-shrink-0" />
+                      {lid.email}
+                    </a>
                   </div>
                 </article>
               ))}
