@@ -21,7 +21,9 @@ function App() {
   // niet gedraaid heeft.
   const heroPhoto = useMemo(
     () => window.__heroPhoto ?? {
-      src: '/hero-monitoring.webp',
+      src: '/hero-monitoring-1200.webp',
+      srcset: '/hero-monitoring-600.webp 600w, /hero-monitoring-1200.webp 1200w',
+      sizes: '(min-width: 1024px) 576px, 92vw',
       alt: 'Medewerker van IT Totaal bewaakt systemen op een monitoringdashboard',
     },
     []
@@ -293,7 +295,7 @@ function App() {
                       willChange: 'transform',
                     }}
                   >
-                    <img className="w-full h-full object-cover" src={heroPhoto.src} alt={heroPhoto.alt} loading="eager" />
+                    <img className="w-full h-full object-cover" src={heroPhoto.src} srcSet={heroPhoto.srcset} sizes={heroPhoto.sizes} alt={heroPhoto.alt} loading="eager" />
                     <div
                       className="absolute inset-0 rounded-2xl pointer-events-none"
                       style={{
