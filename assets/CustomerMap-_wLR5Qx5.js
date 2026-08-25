@@ -1,4 +1,4 @@
-import{j as t,f as x}from"./index-aNENMzw0.js";import{r}from"./react-vendor-BvDay7C4.js";import{M as g,T as b,a as w,L as c}from"./map-vendor-J-BAuCJ2.js";import"./supabase-vendor-D7HrI6pR.js";const v=()=>{const l=`
+import{j as t,f as x}from"./index-CojzV-wi.js";import{r}from"./react-vendor-BvDay7C4.js";import{M as g,T as b,a as w,L as c}from"./map-vendor-J-BAuCJ2.js";import"./supabase-vendor-D7HrI6pR.js";const v=()=>{const l=`
     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="24" cy="24" r="20" fill="#46f0a4" opacity="0.2"/>
       <circle cx="24" cy="24" r="5" fill="#46f0a4"/>
