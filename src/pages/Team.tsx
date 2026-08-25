@@ -20,14 +20,14 @@ interface Teamlid {
 
 const TEAM: Teamlid[] = [
   {
-    naam: 'Patrick Luisman',
-    functie: 'Eigenaar & Directeur',
+    naam: 'Leon Hoogduin',
+    functie: 'Systeembeheerder',
     omschrijving:
-      'Eindverantwoordelijk voor IT Totaal en aanspreekpunt voor onze klanten. Denkt mee over de koers van uw IT-omgeving.',
-    email: 'directie@it-totaal.nl',
-    linkedin: 'https://www.linkedin.com/in/pluisman/',
-    bestand: 'team-patrick',
-    alt: 'Patrick Luisman, eigenaar en directeur van IT Totaal',
+      'Beheert de systemen, servers en netwerken van onze klanten. Lost storingen op voordat u ze merkt.',
+    email: 'helpdesk@it-totaal.nl',
+    linkedin: '',
+    bestand: 'team-leon',
+    alt: 'Leon Hoogduin, systeembeheerder bij IT Totaal',
   },
   {
     naam: 'Kimberly de la Parra',
@@ -40,14 +40,14 @@ const TEAM: Teamlid[] = [
     alt: 'Kimberly de la Parra, Executive Assistant bij IT Totaal',
   },
   {
-    naam: 'Leon Hoogduin',
-    functie: 'Systeembeheerder',
+    naam: 'Patrick Luisman',
+    functie: 'Eigenaar & Directeur',
     omschrijving:
-      'Beheert de systemen, servers en netwerken van onze klanten. Lost storingen op voordat u ze merkt.',
-    email: 'helpdesk@it-totaal.nl',
-    linkedin: '',
-    bestand: 'team-leon',
-    alt: 'Leon Hoogduin, systeembeheerder bij IT Totaal',
+      'Eindverantwoordelijk voor IT Totaal en aanspreekpunt voor onze klanten. Denkt mee over de koers van uw IT-omgeving.',
+    email: 'directie@it-totaal.nl',
+    linkedin: 'https://www.linkedin.com/in/pluisman/',
+    bestand: 'team-patrick',
+    alt: 'Patrick Luisman, eigenaar en directeur van IT Totaal',
   },
 ];
 
