@@ -146,7 +146,7 @@ export default function Team() {
         <section className="pb-20 lg:pb-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <p className="text-blue-600 font-semibold uppercase tracking-wider text-sm mb-3">Wie u spreekt</p>
+              <p className="text-blue-600 font-semibold uppercase tracking-wider text-sm mb-3 mx-auto">Wie u spreekt</p>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Ons team</h2>
               <div className="w-16 h-1 bg-brand-green rounded-full mx-auto mt-5"></div>
             </div>
