@@ -120,7 +120,7 @@ export default function Team() {
               {TEAM.map((lid) => (
                 <article
                   key={lid.bestand}
-                  className="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-shadow duration-300"
+                  className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover-glow cursor-default"
                 >
                   <div className="relative overflow-hidden bg-slate-100" style={{ aspectRatio: '3 / 4' }}>
                     <img
@@ -128,12 +128,12 @@ export default function Team() {
                       srcSet={`/${lid.bestand}-480.webp 480w, /${lid.bestand}-960.webp 960w`}
                       sizes="(min-width: 1024px) 384px, (min-width: 640px) 45vw, 92vw"
                       alt={lid.alt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-900">{lid.naam}</h3>
+                    <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">{lid.naam}</h3>
                     <p className="text-blue-600 font-medium mt-1 mb-3">{lid.functie}</p>
                     <p className="text-slate-600 leading-relaxed">{lid.omschrijving}</p>
                   </div>
@@ -153,24 +153,24 @@ export default function Team() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="tel:0793238540"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-slate-900 bg-brand-green hover:bg-[#3dd493] transition-all shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-slate-900 bg-brand-green hover:bg-[#3dd493] transition-all shadow-lg hover-lift hover-glow"
                 >
                   <Phone size={18} />
                   079 323 8540
                 </a>
                 <a
                   href="mailto:info@it-totaal.nl"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-white border border-slate-500 hover:border-brand-green hover:text-brand-green transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-white bg-white/5 hover:bg-white/10 border border-slate-500 hover:border-brand-green transition-all hover-lift"
                 >
                   <Mail size={18} />
                   info@it-totaal.nl
                 </a>
                 <a
                   href="/#contact"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-white border border-slate-500 hover:border-brand-green hover:text-brand-green transition-all"
+                  className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-white bg-white/5 hover:bg-white/10 border border-slate-500 hover:border-brand-green transition-all hover-lift"
                 >
                   Contactformulier
-                  <ArrowRight size={18} />
+                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
             </div>
