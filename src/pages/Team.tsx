@@ -158,8 +158,14 @@ export default function Team() {
           </div>
         </section>
 
-        <section className="pb-20 lg:pb-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
+          <svg className="absolute top-24 left-0 w-[350px] h-[350px] opacity-15 z-0 pointer-events-none" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#dbeafe" d="M47.3,-78.7C61.5,-71.8,73.3,-58.4,80.5,-43C87.7,-27.6,90.3,-10.2,88.5,6.4C86.7,23,80.5,38.8,71.2,51.8C61.9,64.8,49.5,75,35.4,80.8C21.3,86.6,5.5,88,-10.1,86.3C-25.7,84.6,-41.1,79.8,-54.3,72.1C-67.5,64.4,-78.5,53.8,-84.8,40.5C-91.1,27.2,-92.7,11.2,-90.1,-3.9C-87.5,-19,-80.7,-33.2,-71.3,-45.3C-61.9,-57.4,-49.9,-67.4,-36.2,-74.6C-22.5,-81.8,-7.1,-86.2,7.8,-84.9C22.7,-83.6,33.1,-85.6,47.3,-78.7Z" transform="translate(100 100)" />
+          </svg>
+          <svg className="absolute bottom-10 right-0 w-[400px] h-[400px] opacity-15 z-0 pointer-events-none" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#a7f3d0" d="M41.7,-72.3C54.8,-66.5,66.7,-56.4,74.8,-43.6C82.9,-30.8,87.2,-15.4,87.1,-0.1C87,15.2,82.5,30.4,74.6,43.2C66.7,56,55.4,66.4,42.5,73.3C29.6,80.2,15.1,83.6,-0.3,84.2C-15.7,84.8,-31.4,82.6,-44.8,76.1C-58.2,69.6,-69.3,58.8,-76.8,45.6C-84.3,32.4,-88.2,16.8,-87.8,1.4C-87.4,-14,-82.7,-29.2,-74.5,-42.3C-66.3,-55.4,-54.6,-66.4,-41.2,-72C-27.8,-77.6,-13.9,-77.8,0.5,-78.7C14.9,-79.6,28.6,-78.1,41.7,-72.3Z" transform="translate(100 100)" />
+          </svg>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-14">
               <p className="text-blue-600 font-semibold uppercase tracking-wider text-sm mb-3 mx-auto">Wie u spreekt</p>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Ons team</h2>
@@ -214,8 +220,11 @@ export default function Team() {
         </section>
 
         {VACATURES.length > 0 && (
-          <section className="pb-20 lg:pb-28">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
+            <svg className="absolute top-0 left-0 w-full h-32 -mt-1" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#eff6ff" d="M0,48 C480,96 720,0 960,48 C1200,96 1320,48 1440,64 L1440,0 L0,0 Z" opacity="0.4"/>
+            </svg>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="text-center mb-14">
                 <p className="text-blue-600 font-semibold uppercase tracking-wider text-sm mb-3 mx-auto">Werken bij IT Totaal</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900">We zoeken versterking</h2>
@@ -247,7 +256,7 @@ export default function Team() {
           </section>
         )}
 
-        <section className="pb-20 lg:pb-28">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl px-8 py-12 lg:px-14 lg:py-16 text-center" style={{ backgroundColor: '#0c1959' }}>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Even kennismaken?</h2>
