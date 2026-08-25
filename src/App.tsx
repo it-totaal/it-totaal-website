@@ -1,16 +1,16 @@
 import { useState, useEffect, lazy, Suspense, useMemo, useRef, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Server, Cloud, Headphones, CheckCircle, Phone, Mail, MapPin, Clock, Shield, ShieldCheck, Lock, Award, ArrowRight, Package, Settings, Rocket } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { Server, Cloud, Headphones, CheckCircle, Phone, Mail, Shield, ShieldCheck, Lock, Award, ArrowRight, Package, Settings, Rocket } from 'lucide-react';
 import { StructuredData, organizationSchema, localBusinessSchema, serviceSchema } from './components/StructuredData';
 import { SEO } from './components/SEO';
 import StaticMap from './components/StaticMap';
 import InfiniteLogoScroll from './components/InfiniteLogoScroll';
+import SiteHeader from './components/SiteHeader';
+import SiteFooter from './components/SiteFooter';
 
 const CustomerMap = lazy(() => import('./components/CustomerMap').then(module => ({ default: module.CustomerMap })));
 
 function App() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const heroImageRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
@@ -48,24 +48,6 @@ function App() {
     { url: 'https://www.easytrip.nl/', src: '/logos/easytrip.png', alt: 'EasyTrip', size: 'h-12' },
     { url: 'https://www.kovtransport.nl/', src: '/logos/kov.png', alt: 'KOV Transport', size: 'h-12' },
   ], []);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrolled = window.scrollY > 50;
-          setIsScrolled(scrolled);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
@@ -139,77 +121,7 @@ function App() {
       <StructuredData data={localBusinessSchema} />
       <StructuredData data={serviceSchema} />
 
-      <header role="banner" className={`fixed z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'top-4 left-4 right-4 sm:left-6 sm:right-6 lg:left-8 lg:right-8'
-          : 'top-0 left-0 right-0'
-      }`}>
-        <div className={`transition-all duration-300 ${
-          isScrolled
-            ? 'backdrop-blur-xl shadow-xl shadow-slate-200/60 rounded-2xl border border-white/60'
-            : 'bg-white shadow-md'
-        }`} style={isScrolled ? { backgroundColor: 'rgba(255, 255, 255, 0.75)' } : {}}>
-          <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-            <div className={`flex justify-between items-center transition-all duration-300 ${
-              isScrolled ? 'h-14 py-2.5' : 'h-16 py-3'
-            }`}>
-            <div className="flex-shrink-0">
-              <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="cursor-pointer">
-                <img
-                  src="/logos/logo-ittotaal-green-path.svg"
-                  alt="IT Totaal"
-                  style={{ aspectRatio: '1919/317' }}
-                  className={`transition-all duration-300 ${
-                    isScrolled ? 'h-6' : 'h-8'
-                  }`}
-                />
-              </a>
-            </div>
-
-            <nav aria-label="Hoofdnavigatie" className="hidden lg:flex space-x-8">
-              <a href="#transport" className="font-medium transition-colors text-slate-600 hover:text-blue-600">Transport</a>
-              <a href="#diensten" className="font-medium transition-colors text-slate-600 hover:text-blue-600">Diensten</a>
-              <a href="#security" className="font-medium transition-colors text-slate-600 hover:text-blue-600">Security</a>
-              <a href="#contact" className="font-medium transition-colors text-slate-600 hover:text-blue-600">Contact</a>
-            </nav>
-
-            <div className="flex items-center gap-4">
-              <a href="tel:0793238540" className="hidden md:flex items-center gap-2 text-sm mr-2 text-slate-500 hover:text-brand-green transition-colors group">
-                <Phone className="text-brand-green transition-transform group-hover:rotate-12" size={16} />
-                <span className="font-medium">079 323 8540</span>
-              </a>
-              <a href="https://it-totaal.rmmservice.eu/connect/#/" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-full text-slate-900 bg-brand-green hover:bg-[#3dd493] transition-all shadow-md hover:shadow-lg hover-scale">
-                Support
-              </a>
-            </div>
-
-            <button
-              className="md:hidden transition-colors text-slate-700"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Menu sluiten" : "Menu openen"}
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-
-            {mobileMenuOpen && (
-              <div className="md:hidden pb-6 px-6">
-                <div className="flex flex-col space-y-3">
-                  <a href="#transport" className="transition-colors text-slate-700 hover:text-blue-600">Transport</a>
-                  <a href="#diensten" className="transition-colors text-slate-700 hover:text-blue-600">Diensten</a>
-                  <a href="#security" className="transition-colors text-slate-700 hover:text-blue-600">Security</a>
-                  <a href="#contact" className="transition-colors text-slate-700 hover:text-blue-600">Contact</a>
-                  <a href="https://it-totaal.rmmservice.eu/connect/#/" target="_blank" rel="noopener noreferrer" className="bg-brand-green text-slate-900 px-6 py-2 rounded-lg hover:bg-[#3dd493] transition-colors text-center flex items-center justify-center gap-2">
-                    <Headphones size={20} />
-                    Support
-                  </a>
-                </div>
-              </div>
-            )}
-          </nav>
-        </div>
-      </header>
+      <SiteHeader variant="home" />
 
       <main role="main" className="pt-16">
         <section id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-white">
@@ -813,114 +725,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="border-t-2 border-slate-700 py-12" style={{ backgroundColor: '#0c1959' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <img
-                src="/logos/logo-ittotaal-white.svg"
-                alt="IT Totaal"
-                style={{ aspectRatio: '1919/317' }}
-                className="h-8 mb-5"
-              />
-              <p className="text-slate-300 leading-relaxed mb-4">
-                Sinds 2001 uw betrouwbare partner voor complete IT-dienstverlening in de regio Rotterdam en omgeving.
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-start gap-2 text-slate-300">
-                  <MapPin size={16} className="text-brand-green flex-shrink-0 mt-0.5" />
-                  <div className="text-sm">
-                    <div>Rokkeveenseweg 32</div>
-                    <div>2712XZ Zoetermeer</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-slate-300">
-                  <Phone size={16} className="text-brand-green flex-shrink-0" />
-                  <a href="tel:0793238540" className="text-sm hover:text-brand-green transition-colors">079 323 8540</a>
-                </div>
-                <div className="flex items-center gap-2 text-slate-300">
-                  <Mail size={16} className="text-brand-green flex-shrink-0" />
-                  <a href="mailto:info@it-totaal.nl" className="text-sm hover:text-brand-green transition-colors">info@it-totaal.nl</a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-5 text-lg">Diensten</h4>
-              <ul className="space-y-3">
-                <li><a href="#diensten" className="text-slate-300 hover:text-blue-400 transition-colors">Werkplekbeheer</a></li>
-                <li><a href="#diensten" className="text-slate-300 hover:text-blue-400 transition-colors">Cloud oplossingen</a></li>
-                <li><a href="#diensten" className="text-slate-300 hover:text-blue-400 transition-colors">Microsoft 365</a></li>
-                <li><a href="#diensten" className="text-slate-300 hover:text-blue-400 transition-colors">Cybersecurity</a></li>
-                <li><a href="#diensten" className="text-slate-300 hover:text-blue-400 transition-colors">IT Support</a></li>
-                <li><a href="#diensten" className="text-slate-300 hover:text-blue-400 transition-colors">VoIP Telefonie</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-5 text-lg">Bedrijf</h4>
-              <ul className="space-y-3">
-                <li><a href="#waarom" className="text-slate-300 hover:text-blue-400 transition-colors">Waarom IT Totaal</a></li>
-                <li><a href="#security" className="text-slate-300 hover:text-blue-400 transition-colors">Security</a></li>
-                <li><a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a></li>
-                <li><a href="https://it-totaal.rmmservice.eu/connect/#/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-blue-400 transition-colors">Support Portal</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-5 text-lg">Juridisch</h4>
-              <ul className="space-y-3">
-                <li><Link to="/privacy-verklaring" className="text-slate-300 hover:text-blue-400 transition-colors">Privacy verklaring</Link></li>
-                <li><Link to="/algemene-voorwaarden" className="text-slate-300 hover:text-blue-400 transition-colors">Algemene voorwaarden</Link></li>
-                <li><Link to="/verwerkersovereenkomst" className="text-slate-300 hover:text-blue-400 transition-colors">Verwerkersovereenkomst</Link></li>
-                <li><Link to="/hulpmiddelen" className="text-slate-300 hover:text-blue-400 transition-colors">Hulpmiddelen</Link></li>
-              </ul>
-              <div className="mt-6 pt-6 border-t border-slate-600">
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  KvK: 73533807<br />
-                  BTW: NL859563625B01
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="py-4 -mb-12" style={{ backgroundColor: '#070f3d' }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <a
-                href="https://linkedin.com/company/it-totaal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                Volg ons op LinkedIn
-              </a>
-
-              <p className="text-slate-400 text-sm">&copy; {new Date().getFullYear()} IT Totaal Diensten BV. Alle rechten voorbehouden.</p>
-
-              <a
-                href="https://www.ictwaarborg.nl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="flex items-center gap-3 bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg transition-all border border-slate-600 hover:border-blue-400">
-                  <img
-                    src="/ict-waarborg-logo.png"
-                    alt="ICT Waarborg lid"
-                    className="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
-                    loading="lazy"
-                  />
-                  <div className="text-left border-l border-slate-600 pl-3">
-                    <p className="text-xs text-slate-400 uppercase font-semibold">Aangesloten bij</p>
-                    <p className="text-sm text-white font-bold">ICT Waarborg</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter variant="home" />
     </div>
   );
 }
