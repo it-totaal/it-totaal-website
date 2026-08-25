@@ -34,7 +34,7 @@ const TEAM: Teamlid[] = [
     omschrijving:
       'Verzorgt de administratie en zorgt dat alles achter de schermen soepel loopt. Vaak de eerste stem die u hoort.',
     email: 'administratie@it-totaal.nl',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/kimberly-de-la-parra-33b461102/',
     bestand: 'team-kimberly',
     alt: 'Kimberly de la Parra, Executive Assistant bij IT Totaal',
   },
