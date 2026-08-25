@@ -10,7 +10,34 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
 
-    <link rel="preload" as="image" href="/hero-office.webp" fetchpriority="high" />
+    <script>
+      /* Hero-foto: bij elk bezoek wordt hier één foto willekeurig gekozen.
+         Dit gebeurt in de <head>, vóór React, zodat de preload hieronder meteen
+         de júiste foto met voorrang laadt. Zou de keuze pas in React vallen, dan
+         haalt de browser eerst de verkeerde foto binnen: trager en zichtbaar
+         geflikker in de hero.
+         Nieuwe foto toevoegen? Alleen deze lijst aanvullen — verder niets. */
+      (function () {
+        var fotos = [
+          { src: '/hero-monitoring.webp',     alt: 'Medewerker van IT Totaal bewaakt systemen op een monitoringdashboard' },
+          { src: '/hero-rackontwerp.webp',    alt: 'Medewerker van IT Totaal werkt aan een serverrack-ontwerp' },
+          { src: '/hero-orderverwerking.webp', alt: 'Medewerker van IT Totaal verwerkt orders op kantoor' },
+          { src: '/hero-overleg.webp',        alt: 'Collega\'s van IT Totaal overleggen op de werkvloer' },
+          { src: '/hero-rackstudio.webp',     alt: 'IT-specialist van IT Totaal configureert een serverrack' },
+          { src: '/hero-kantoor.webp',        alt: 'Team van IT Totaal in gesprek op kantoor' },
+          { src: '/hero-teamoverleg.webp',    alt: 'Teamoverleg bij IT Totaal aan de vergadertafel' }
+        ];
+        var foto = fotos[Math.floor(Math.random() * fotos.length)];
+        window.__heroPhoto = foto;
+
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = foto.src;
+        link.setAttribute('fetchpriority', 'high');
+        document.head.appendChild(link);
+      })();
+    </script>
     <link rel="preload" as="image" href="/logos/logo-ittotaal-green-path.svg" fetchpriority="high" />
     <link rel="dns-prefetch" href="https://basemaps.cartocdn.com" />
     <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
@@ -47,7 +74,7 @@
     <meta name="theme-color" content="#0c1959" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <script type="module" crossorigin src="/assets/index-CBq75cuX.js"></script>
+    <script type="module" crossorigin src="/assets/index-C3Q0KOIJ.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/supabase-vendor-D7HrI6pR.js">
     <link rel="modulepreload" crossorigin href="/assets/react-vendor-BvDay7C4.js">
     <link rel="stylesheet" crossorigin href="/assets/index-Dg1GQdAJ.css">
