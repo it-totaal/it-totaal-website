@@ -172,7 +172,7 @@ export default function Team() {
               <div className="w-16 h-1 bg-brand-green rounded-full mx-auto mt-5"></div>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {TEAM.map((lid) => (
                 <article
                   key={lid.bestand}
@@ -192,10 +192,10 @@ export default function Team() {
                     <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">{lid.naam}</h3>
                     <p className="text-blue-600 font-medium mt-1 mb-3">{lid.functie}</p>
                     <p className="text-slate-600 leading-relaxed">{lid.omschrijving}</p>
-                    <div className="mt-5 pt-5 border-t border-slate-100 flex items-center justify-between gap-3">
+                    <div className="mt-5 pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
                       <a
                         href={`mailto:${lid.email}`}
-                        className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors break-all"
+                        className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors whitespace-nowrap"
                       >
                         <Mail size={16} className="text-blue-600 flex-shrink-0" />
                         {lid.email}
@@ -215,12 +215,39 @@ export default function Team() {
                   </div>
                 </article>
               ))}
+
+              {VACATURES.length > 0 && (
+                <a
+                  href="#vacatures"
+                  className="group flex flex-col bg-white rounded-2xl overflow-hidden border-2 border-dashed border-blue-200 hover:border-blue-400 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div
+                    className="relative flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-slate-50"
+                    style={{ aspectRatio: '3 / 4' }}
+                  >
+                    <div className="w-20 h-20 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 transition-all group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110">
+                      <UserPlus size={34} />
+                    </div>
+                  </div>
+                  <div className="p-6 flex-grow">
+                    <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">Jouw plek?</h3>
+                    <p className="text-blue-600 font-medium mt-1 mb-3">Wij zoeken versterking</p>
+                    <p className="text-slate-600 leading-relaxed">
+                      Er is ruimte voor een vierde collega. Kom je ons team compleet maken?
+                    </p>
+                    <span className="mt-5 pt-5 border-t border-slate-100 inline-flex items-center gap-2 text-sm font-medium text-slate-600 group-hover:text-blue-600 transition-colors">
+                      Bekijk de vacatures
+                      <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </a>
+              )}
             </div>
           </div>
         </section>
 
         {VACATURES.length > 0 && (
-          <section className="py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
+          <section id="vacatures" className="py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
             <svg className="absolute top-0 left-0 w-full h-32 -mt-1" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="#eff6ff" d="M0,48 C480,96 720,0 960,48 C1200,96 1320,48 1440,64 L1440,0 L0,0 Z" opacity="0.4"/>
             </svg>
