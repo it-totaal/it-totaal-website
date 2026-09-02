@@ -70,6 +70,7 @@ export default function SiteFooter({ variant = 'home' }: SiteFooterProps) {
             <ul className="space-y-3">
               <li><a href={anker('waarom')} className="text-slate-300 hover:text-blue-400 transition-colors">Waarom IT Totaal</a></li>
               <li><a href={anker('security')} className="text-slate-300 hover:text-blue-400 transition-colors">Security</a></li>
+              <li><Link to="/nis2" className="text-slate-300 hover:text-blue-400 transition-colors">NIS2 &amp; Cyberbeveiligingswet</Link></li>
               <li><Link to="/team" className="text-slate-300 hover:text-blue-400 transition-colors">Team</Link></li>
               <li><a href={anker('contact')} className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a></li>
               <li><a href="https://it-totaal.rmmservice.eu/connect/#/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-blue-400 transition-colors">Support Portal</a></li>
