@@ -72,21 +72,13 @@ const teamSchema = {
 
 interface Vacature {
   functie: string;
-  omschrijving: string;
 }
 
-// Leeg laten (of de sectie weghalen) zodra er niets meer openstaat.
+// Leeg laten zodra er niets meer openstaat; dan verdwijnt de kaart "Jouw plek?"
+// vanzelf uit de rij.
 const VACATURES: Vacature[] = [
-  {
-    functie: 'Senior systeembeheerder',
-    omschrijving:
-      'Je draait zelfstandig complexe trajecten bij onze klanten: migraties, inrichting van servers en netwerken, en het bewaken van de omgevingen die we beheren. Je bent het aanspreekpunt als het echt ingewikkeld wordt.',
-  },
-  {
-    functie: 'Systeembeheerder',
-    omschrijving:
-      'Je houdt de omgevingen van onze klanten draaiend: werkplekken, Microsoft 365, back-ups en de dagelijkse meldingen. Je leert het vak bij een klein team waar je alles voorbij ziet komen.',
-  },
+  { functie: 'Senior systeembeheerder' },
+  { functie: 'Systeembeheerder' },
 ];
 
 export default function Team() {
@@ -218,7 +210,7 @@ export default function Team() {
 
               {VACATURES.length > 0 && (
                 <a
-                  href="#vacatures"
+                  href={`mailto:directie@it-totaal.nl?subject=${encodeURIComponent('Sollicitatie')}`}
                   className="group flex flex-col bg-white rounded-2xl overflow-hidden border-2 border-dashed border-blue-200 hover:border-blue-400 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div
@@ -229,14 +221,14 @@ export default function Team() {
                       <UserPlus size={34} />
                     </div>
                   </div>
-                  <div className="p-6 flex-grow">
+                  <div className="p-6 flex-grow flex flex-col">
                     <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">Jouw plek?</h3>
                     <p className="text-blue-600 font-medium mt-1 mb-3">Wij zoeken versterking</p>
-                    <p className="text-slate-600 leading-relaxed">
-                      Er is ruimte voor een vierde collega. Kom je ons team compleet maken?
+                    <p className="text-slate-600 leading-relaxed flex-grow">
+                      Er is ruimte voor een {VACATURES.map((v) => v.functie.toLowerCase()).join(' en een ')}. Kom je ons team compleet maken?
                     </p>
                     <span className="mt-5 pt-5 border-t border-slate-100 inline-flex items-center gap-2 text-sm font-medium text-slate-600 group-hover:text-blue-600 transition-colors">
-                      Bekijk de vacatures
+                      Solliciteer
                       <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
@@ -245,43 +237,6 @@ export default function Team() {
             </div>
           </div>
         </section>
-
-        {VACATURES.length > 0 && (
-          <section id="vacatures" className="py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
-            <svg className="absolute top-0 left-0 w-full h-32 -mt-1" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path fill="#eff6ff" d="M0,48 C480,96 720,0 960,48 C1200,96 1320,48 1440,64 L1440,0 L0,0 Z" opacity="0.4"/>
-            </svg>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              <div className="text-center mb-14">
-                <p className="text-blue-600 font-semibold uppercase tracking-wider text-sm mb-3 mx-auto">Werken bij IT Totaal</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">We zoeken versterking</h2>
-                <div className="w-16 h-1 bg-brand-green rounded-full mx-auto mt-5"></div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-                {VACATURES.map((vacature) => (
-                  <article
-                    key={vacature.functie}
-                    className="group flex flex-col bg-blue-50/40 rounded-2xl border-2 border-dashed border-blue-200 p-8 transition-all duration-300 hover:border-blue-400 hover:-translate-y-1"
-                  >
-                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-blue-600 mb-6 shadow-sm transition-all group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110">
-                      <UserPlus size={24} />
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{vacature.functie}</h3>
-                    <p className="text-slate-600 leading-relaxed mb-6 flex-grow">{vacature.omschrijving}</p>
-                    <a
-                      href={`mailto:directie@it-totaal.nl?subject=${encodeURIComponent('Sollicitatie ' + vacature.functie)}`}
-                      className="inline-flex items-center gap-2 self-start px-6 py-3 rounded-full font-medium text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md hover-lift"
-                    >
-                      Solliciteer
-                      <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                    </a>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
