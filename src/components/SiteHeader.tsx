@@ -106,6 +106,12 @@ export default function SiteHeader({ variant = 'home' }: SiteHeaderProps) {
                 </a>
               ))}
               <Link
+                to="/nis2"
+                className="font-medium transition-colors text-slate-600 hover:text-blue-600"
+              >
+                NIS2
+              </Link>
+              <Link
                 to="/team"
                 className="font-medium transition-colors text-slate-600 hover:text-blue-600"
               >
@@ -160,6 +166,13 @@ export default function SiteHeader({ variant = 'home' }: SiteHeaderProps) {
                     {label}
                   </a>
                 ))}
+                <Link
+                  to="/nis2"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="transition-colors text-slate-700 hover:text-blue-600"
+                >
+                  NIS2
+                </Link>
                 <Link
                   to="/team"
                   onClick={() => setMobileMenuOpen(false)}

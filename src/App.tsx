@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense, useMemo, useRef, useCallback } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Server, Cloud, Headphones, CheckCircle, Phone, Mail, Shield, ShieldCheck, Lock, Award, ArrowRight, Package, Settings, Rocket } from 'lucide-react';
 import { StructuredData, organizationSchema, localBusinessSchema, serviceSchema } from './components/StructuredData';
 import { SEO } from './components/SEO';
@@ -629,12 +629,18 @@ function App() {
                       </li>
                     </ul>
 
-                    <a href="#contact" className="group inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-slate-900 bg-brand-green hover:bg-[#3dd493] transition-all shadow-lg hover-lift hover-glow">
-                      Plan een security check
-                      <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </a>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <a href="#contact" className="group inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-slate-900 bg-brand-green hover:bg-[#3dd493] transition-all shadow-lg hover-lift hover-glow">
+                        Plan een security check
+                        <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </a>
+                      <Link to="/nis2" className="group inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg text-white bg-white/10 hover:bg-white/20 border border-white/30 hover:border-brand-green transition-all hover-lift">
+                        NIS2: geldt het voor u?
+                        <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </div>
                   </div>
                   <div className="relative h-full min-h-[300px] lg:min-h-[400px]">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-tr from-blue-200 to-white rounded-full opacity-30 blur-2xl -z-10"></div>
