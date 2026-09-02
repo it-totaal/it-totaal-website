@@ -168,7 +168,7 @@ export default function Team() {
               {TEAM.map((lid) => (
                 <article
                   key={lid.bestand}
-                  className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover-glow cursor-default"
+                  className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover-glow cursor-default"
                 >
                   <div className="relative overflow-hidden bg-slate-100" style={{ aspectRatio: '3 / 4' }}>
                     <img
@@ -180,14 +180,14 @@ export default function Team() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">{lid.naam}</h3>
                     <p className="text-blue-600 font-medium mt-1 mb-3">{lid.functie}</p>
-                    <p className="text-slate-600 leading-relaxed">{lid.omschrijving}</p>
+                    <p className="text-slate-600 leading-relaxed flex-grow">{lid.omschrijving}</p>
                     <div className="mt-5 pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
                       <a
                         href={`mailto:${lid.email}`}
-                        className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors whitespace-nowrap"
+                        className="inline-flex items-center gap-2 min-h-9 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors whitespace-nowrap"
                       >
                         <Mail size={16} className="text-blue-600 flex-shrink-0" />
                         {lid.email}
