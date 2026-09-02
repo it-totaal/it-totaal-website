@@ -34,6 +34,9 @@ Lessen en valkuilen van dit project. Lees dit aan het begin van elke sessie.
 - **Altijd twee maten met `srcset`.** Eén groot bestand dat de browser zelf terugschaalt oogt zichtbaar zachter: het verkleinen gebeurt met een snel filter en elke verkleining kost acutantie. Gemeten met de variantie van de Laplaciaan ging de scherpte van 334 naar 681 op een gewoon scherm.
 - `cwebp` start niet zonder `libtiff` — `brew install webp` alleen is niet genoeg.
 - Hero-keuze valt in een script in de `<head>` van `index.html`, vóór React, zodat de preload de juiste variant met voorrang haalt. Nieuwe foto toevoegen = alleen die lijst aanvullen.
+- **Een foto kan op meer dan één plek zitten.** Naast de hero-rotatie bestaan de deelafbeeldingen `og-ittotaal.jpg` (voorpagina) en `og-team.jpg` (teampagina) — losse bestanden, gemaakt uit dezelfde originelen. Haal je een foto uit de rotatie, controleer dan of hij niet ook de deelafbeelding is. Gebeurd op 02-09-2026: `hero-kantoor` werd geschrapt, maar wie de site deelde in WhatsApp kreeg diezelfde opname nog te zien.
+- Nagaan of een origineel nergens meer gebruikt wordt: zoek op de bestandsnaam in `index.html` en `src/`, en vergelijk daarnaast de deelafbeeldingen visueel — die dragen de naam van hun bron niet.
+- Deelafbeeldingen worden lang gecachet door WhatsApp, LinkedIn en Facebook. Na een wijziging kan de oude nog wekenlang opduiken; bij LinkedIn te forceren met de Post Inspector.
 
 ## Opmaak
 
