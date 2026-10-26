@@ -11,13 +11,9 @@ interface SiteHeaderProps {
 }
 
 const SECTIES = [
+  { hash: 'transport', label: 'Transport' },
   { hash: 'diensten', label: 'Diensten' },
   { hash: 'security', label: 'Security' },
-];
-
-// Pagina's, geen secties. Staan vóór de ankers in het menu.
-const PAGINAS = [
-  { pad: '/transport', label: 'Transport' },
 ];
 
 export default function SiteHeader({ variant = 'home' }: SiteHeaderProps) {
@@ -100,15 +96,6 @@ export default function SiteHeader({ variant = 'home' }: SiteHeaderProps) {
             </div>
 
             <nav aria-label="Hoofdnavigatie" className="hidden lg:flex space-x-8">
-              {PAGINAS.map(({ pad, label }) => (
-                <Link
-                  key={pad}
-                  to={pad}
-                  className="font-medium transition-colors text-slate-600 hover:text-blue-600"
-                >
-                  {label}
-                </Link>
-              ))}
               {SECTIES.map(({ hash, label }) => (
                 <a
                   key={hash}
@@ -169,16 +156,6 @@ export default function SiteHeader({ variant = 'home' }: SiteHeaderProps) {
           {mobileMenuOpen && (
             <div className="lg:hidden pb-6 px-6">
               <div className="flex flex-col space-y-3">
-                {PAGINAS.map(({ pad, label }) => (
-                  <Link
-                    key={pad}
-                    to={pad}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="transition-colors text-slate-700 hover:text-blue-600"
-                  >
-                    {label}
-                  </Link>
-                ))}
                 {SECTIES.map(({ hash, label }) => (
                   <a
                     key={hash}

@@ -449,15 +449,6 @@ function App() {
                     Plan een gesprek
                     <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
                   </a>
-                  <div className="mt-5">
-                    <Link
-                      to="/transport"
-                      className="group inline-flex items-center gap-2 font-medium text-blue-600 hover:text-blue-700 transition-colors"
-                    >
-                      Lees meer over IT voor transport en logistiek
-                      <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </div>
                 </div>
               </div>
             </div>

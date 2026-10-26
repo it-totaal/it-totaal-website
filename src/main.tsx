@@ -11,7 +11,6 @@ const Verwerkersovereenkomst = lazy(() => import('./pages/Verwerkersovereenkomst
 const Hulpmiddelen = lazy(() => import('./pages/Hulpmiddelen.tsx'));
 const Team = lazy(() => import('./pages/Team.tsx'));
 const Nis2 = lazy(() => import('./pages/Nis2.tsx'));
-const Transport = lazy(() => import('./pages/Transport.tsx'));
 const NotFound = lazy(() => import('./pages/NotFound.tsx'));
 
 const PageLoader = () => (
@@ -36,7 +35,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/hulpmiddelen" element={<Hulpmiddelen />} />
           <Route path="/team" element={<Team />} />
           <Route path="/nis2" element={<Nis2 />} />
-          <Route path="/transport" element={<Transport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

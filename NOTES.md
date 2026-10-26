@@ -4,6 +4,7 @@ Lessen en valkuilen van dit project. Lees dit aan het begin van elke sessie.
 
 ## Open punten
 
+- **Transportpagina staat klaar maar is eruit gehaald** (26-10-2026, op verzoek). De pagina met de vier geverifieerde TMS-pakketten zit in commit `907f354`. Terugzetten: `git checkout 907f354 -- src/pages/Transport.tsx`, daarna de route in `main.tsx`, de entry in `seo-routes.json`, de sitemap-regel, de menu-link in `SiteHeader` en de voettekstlink herstellen — zie diezelfde commit.
 - **GitHub-token roteren** — staat in platte tekst in de remote-URL in `.git/config` (niet in de repo, wel wereldleesbaar op deze Mac en meegereisd in elke kopie van de map). Patrick roteert hem op 26-08-2026. Daarna de remote omzetten naar een schone URL met credential helper of SSH.
 - **LinkedIn van Leon Hoogduin** ontbreekt — in `src/pages/Team.tsx`, in de `TEAM`-lijst het lege veld `linkedin: ''` bij zijn blok. De knop verschijnt vanzelf zodra er een URL staat.
 - **Link vanaf de voorpagina naar `/team`** — nu alleen bereikbaar via menu en voettekst. De sectie `#waarom` is de natuurlijke plek; interne links tellen mee voor vindbaarheid.
