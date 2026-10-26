@@ -53,4 +53,4 @@ const ESRI_LICHTGRIJS: Basiskaart = {
 export const BASISKAARTEN = { OSM, ESRI_LICHTGRIJS };
 
 /** Wissel hier van stijl. */
-export const HUIDIG: Basiskaart = OSM;
+export const HUIDIG: Basiskaart = ESRI_LICHTGRIJS;
