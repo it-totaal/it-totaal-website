@@ -1,5 +1,6 @@
 import { MapPin } from 'lucide-react';
 import customerLocations from '../data/customer-locations.json';
+import { HUIDIG } from '../lib/basemap';
 
 interface StaticMapProps {
   className?: string;
@@ -56,7 +57,12 @@ export default function StaticMap({ className = '' }: StaticMapProps) {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url(https://a.basemaps.cartocdn.com/light_all/${zoom}/${centerTileX}/${centerTileY}.png)`,
+          backgroundImage: [
+            HUIDIG.labels && `url(${HUIDIG.labels.tegel(zoom, centerTileX, centerTileY)})`,
+            `url(${HUIDIG.tegel(zoom, centerTileX, centerTileY)})`,
+          ]
+            .filter(Boolean)
+            .join(', '),
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

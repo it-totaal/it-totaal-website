@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { HUIDIG } from '../lib/basemap';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import customerLocationsData from '../data/customer-locations.json';
@@ -98,10 +99,8 @@ export function CustomerMap() {
           ref={mapRef}
           zoomControl={true}
         >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          />
+          <TileLayer attribution={HUIDIG.attributie} url={HUIDIG.url} />
+          {HUIDIG.labels && <TileLayer url={HUIDIG.labels.url} />}
           {cityGroups.map((group, index) => (
             <Marker
               key={index}
