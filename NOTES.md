@@ -16,6 +16,7 @@ Lessen en valkuilen van dit project. Lees dit aan het begin van elke sessie.
 - **Nooit los `vite build` draaien voor een deploy.** Het build-script bevat een prerender-stap (`scripts/prerender-routes.mjs`) die per route een echte `index.html` wegschrijft. Sla je die over, dan geven alle subpagina's weer de 404-pagina van GitHub.
 - GitHub Pages serveert alleen bestanden die echt bestaan. Een app met routing aan de clientkant heeft dus per route een bestand nodig; anders werkt `/team` alleen als je vanaf de voorpagina doorklikt en niet via een directe link, een bookmark of de sitemap.
 - `public/_redirects` is Netlify-syntax en deed hier niets. Verwijderd, niet terugzetten.
+- **`npx gh-pages -d dist` faalt soms met `fatal: mmap failed` of een ProcessError.** Ligt niet aan de site maar aan de werkmap die gh-pages zelf aanhoudt. Oplossing: `rm -rf node_modules/.cache/gh-pages` en opnieuw deployen. Kwam op 26-10-2026 twee keer voor; de Mac stond toen op 95% schijf en 83% swap.
 - Propagatie na een deploy duurt 35 tot 60 seconden. Controleer op de bestandsnaam van de nieuwe bundel, niet op het oog — je eigen browser houdt de oude versie vast.
 
 ## Adres en vindbaarheid
@@ -52,6 +53,14 @@ Lessen en valkuilen van dit project. Lees dit aan het begin van elke sessie.
 
 - Zoeken naar ongebruikte bestanden met een simpele grep op de bestandsnaam gaat **twee kanten op mis**. Vals alarm: `hero-kantoor-600.webp` staat nergens letterlijk, want die naam wordt opgebouwd (`'/' + naam + '-600.webp'`). Gemist: `logo.svg` lijkt gebruikt omdat die tekst ook in `duo-logo.svg` zit. Match daarom op een padgrens (`/` of een quote) en behandel de samengestelde families apart.
 - Een browsercontrole op "niet geladen afbeeldingen" meldt van alles wat gewoon `loading="lazy"` is en nog niet in beeld kwam. Scroll eerst de hele pagina door, en vergelijk daarna met de live site voordat je concludeert dat je iets gesloopt hebt. Er blijven er 13 over — de logoscroller houdt de originelen verborgen en toont kopieen. Dat is normaal.
+
+## Kaart
+
+- De klantenkaart haalt zijn tegels bij **Esri Light Gray**, ingesteld op één plek: `src/lib/basemap.ts`. Wisselen van stijl is daar één regel (`HUIDIG`).
+- **CARTO viel in oktober 2026 weg**: zij zetten hun gratis basiskaarten achter een API-sleutel. Ze geven geen foutmelding maar een tegel met "API KEY REQUIRED" erop, met status 200 — de kaart lijkt dan te werken maar is onleesbaar. Controleer bij kaartproblemen dus de *inhoud* van een tegel, niet de statuscode.
+- **Esri vraagt normaal een account** voor hun basiskaarten. Deze eindpunten staan open, maar hetzelfde kan gebeuren als bij CARTO. `OSM` staat als alternatief klaar in hetzelfde bestand: gegarandeerd vrij te gebruiken, maar kleurrijker dan het ontwerp.
+- De plaatsnamen zitten bij Esri in een **aparte laag**. Zonder die laag krijg je een grijs vlak zonder houvast. Beide kaarten tonen hem: de interactieve als tweede TileLayer, de statische op mobiel als gestapelde achtergrond.
+- Er zijn **twee** kaarten: `CustomerMap` (Leaflet, desktop) en `StaticMap` (één achtergrondafbeelding met SVG-markers, mobiel). Wijzig je de bron, controleer ze allebei.
 
 ## Beslissingen
 
