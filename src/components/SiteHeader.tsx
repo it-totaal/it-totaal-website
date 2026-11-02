@@ -139,7 +139,7 @@ export default function SiteHeader({ variant = 'home' }: SiteHeaderProps) {
                 rel="noopener noreferrer"
                 className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-full text-slate-900 bg-brand-green hover:bg-[#3dd493] transition-all shadow-md hover:shadow-lg hover-scale"
               >
-                Support
+                Klantportaal
               </a>
             </div>
 
@@ -194,7 +194,7 @@ export default function SiteHeader({ variant = 'home' }: SiteHeaderProps) {
                   className="bg-brand-green text-slate-900 px-6 py-2 rounded-lg hover:bg-[#3dd493] transition-colors text-center flex items-center justify-center gap-2"
                 >
                   <Headphones size={20} />
-                  Support
+                  Klantportaal
                 </a>
               </div>
             </div>
